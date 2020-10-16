@@ -7,7 +7,7 @@ parameters:
     description: "A message receiver phone number, in 48XXXXXXXXX or XXXXXXXXX format"
   message:
     type: string
-    default: "Default message from smsapi-orb"
+    default: "Default message from smsapi-pl-orb"
     description: "SMS message text content, up to 160 characters"
   token:
     type: env_var_name
