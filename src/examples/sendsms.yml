@@ -3,12 +3,12 @@ description: >
 usage:
   version: 2.1
   orbs:
-    smsapi-orb: mitcom/smsapi-orb@1.2.3
+    smsapi-pl-orb: mitcom/smsapi-pl-orb@1.2.3
     jobs:
       build:
         docker:
           - image: cimg/base:stable
         steps:
-          - smsapi-orb/sendsms:
+          - smsapi-pl-orb/sendsms:
               to: "+48123456789"
               message: "A notification message"
