@@ -1,0 +1,23 @@
+description: >
+  Sens SMS using SMSAPI.pl service
+parameters:
+  to:
+    type: string
+    default: ${SMSAPI_TO}
+    description: "A message receiver phone number, in 48XXXXXXXXX or XXXXXXXXX format"
+  message:
+    type: string
+    default: "Default message from smsapi-orb"
+    description: "SMS message text content, up to 160 characters"
+  token:
+    type: env_var_name
+    default: SMSAPI_TOKEN
+    description: "SMSAPI authorization token"
+steps:
+  - run:
+      name: SMS notification
+      command: >
+        curl -X POST "https://api.smsapi.pl/sms.do" \
+          -H "Authorization: Bearer ${<< parameters.token >>}" \
+          --data-urlencode "to=${<< parameters.to >>}" \
+          --data-urlencode "message=${<< parameters.message >>}"
