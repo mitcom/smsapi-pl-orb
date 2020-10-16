@@ -19,5 +19,5 @@ steps:
       command: >
         curl -X POST "https://api.smsapi.pl/sms.do" \
           -H "Authorization: Bearer ${<< parameters.token >>}" \
-          --data-urlencode "to=${<< parameters.to >>}" \
-          --data-urlencode "message=${<< parameters.message >>}"
+          --data-urlencode "to=<< parameters.to >>" \
+          --data-urlencode "message=<< parameters.message >>"
